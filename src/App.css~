@@ -48,10 +48,10 @@ img{
 
         h1{
             margin: 0;
-            font-size: clamp(0.8rem, 3cqw, 1.5rem);
+            font-size: clamp(0.8rem, 6.5cqw, 1.5rem);
         }
         .version{
-            font-size: clamp(0.6rem, 3cqw, 1rem);
+            font-size: clamp(0.6rem, 6.5cqw, 1rem);
             display: flex;
             justify-content: space-between;
         }
@@ -185,7 +185,7 @@ img{
             line-height: 1;
             margin: 0;
             padding: 0;
-            padding: 0px clamp(10px, 3cqw, 20px);
+            padding: 0px 20px;
         }
         .subtitle-container{
             display: flex;
@@ -294,13 +294,13 @@ img{
             line-height: 1;
             margin: 0;
             padding: 0;
-            padding: 0px clamp(10px, 3cqw, 20px);
+            padding: 0px 20px;
         }
         .subtitle-container{
             display: flex;
             flex-direction: row;
             height: 100%;
-            gap:2rem;
+            gap:clamp(0.8rem, 3cqw, 2rem);
             justify-content: center;
             align-items: center;
             img{
@@ -416,7 +416,7 @@ img{
     }
   
 }
-@media(max-width: 1024px){
+@media(max-width: 1000px){
     body{
         height: 100%
     }

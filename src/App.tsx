@@ -36,13 +36,13 @@ function App() {
         </header>
         <span className="a_simple">a_simple_site_about_me</span>
         <div className="front-page">
-          <img src={githubaccount} className="github_account_qr" />
+          <div className="qr-container">
+            <img src={githubaccount} className="github_account_qr" />
+          </div>
+
           <div className="basic-info">
             <h2>BRYAN ANTIER</h2>
-            <div className="bday-container">
-              <span>02-20-04</span>
-              <div className="stripe"></div>
-            </div>
+            <span>02-20-04</span>
             <div className="box-x-container">
               <div className="x-box"></div>
               <div className="x-box"></div>
@@ -73,7 +73,7 @@ function App() {
           <div className="summary-bottom">
             <div className="stripe bottom"></div>
             <div>
-              <img src={arrow} />
+              <img src={arrow} id="arrow-orient" />
             </div>
           </div>
         </div>
@@ -200,6 +200,9 @@ function App() {
             <div className="random-square">
               <img src={circles} />
             </div>
+          </div>
+          <div className="summary-bottom">
+            <div className="stripe bottom"></div>
           </div>
         </div>
       </div>
