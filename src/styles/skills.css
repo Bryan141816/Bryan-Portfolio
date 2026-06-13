@@ -1,0 +1,43 @@
+.skills_icon {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  aspect-ratio: 1/1;
+  & div {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3px;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    white-space: pre;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+    pointer-events: none;
+  }
+
+  & span {
+    font-weight: 600;
+    color: rgb(190, 190, 190);
+  }
+}
+
+.skills_container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 3rem;
+  padding: 2rem;
+  width: fit-content;
+}
+
+.skills_main_container {
+  display: flex;
+  height: 100vh;
+  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 4rem;
+}

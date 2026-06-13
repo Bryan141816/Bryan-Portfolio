@@ -1,0 +1,78 @@
+.icons {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+
+  & div {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3px;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    white-space: pre;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+    pointer-events: none;
+  }
+}
+
+.horizontal-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+.get_in_touch_text{
+  font-size: 3rem;
+  font-weight: 600;
+  
+  & a{
+    color: inherit;
+    font-size: inherit;
+    font-weight: in;
+  }
+}
+.get_in_touch_container {
+  display: flex;
+  height: 100vh;
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 4rem;
+  color: white;
+}
+
+.get_in_touch_header {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 5px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  white-space: pre;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+  color: #00b7ff;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: 3rem;
+
+  /* background: linear-gradient(90deg, #4da3ff, #cde9ff, #0c3f91);
+  background-size: 200% 200%;
+
+  animation: gradientShift 3s ease infinite;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent; */
+}

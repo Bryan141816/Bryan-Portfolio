@@ -1,12 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap');
-
-
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -18,21 +10,23 @@
   -moz-osx-font-smoothing: grayscale;
   color: black;
 }
-*{
-    box-sizing: border-box;
-/*       font-family: "Open Sans", sans-serif; */
-      font-family: "Red Rose", serif;
+
+* {
+  font-family: 'Satoshi', sans-serif;
   font-optical-sizing: auto;
-  font-style: normal;
 
 }
 
 body {
   margin: 0;
   display: flex;
+  flex-direction: column;
   place-items: center;
   min-width: 320px;
   height: 100vh;
 
 }
 
+#root {
+  width: 100%;
+}
