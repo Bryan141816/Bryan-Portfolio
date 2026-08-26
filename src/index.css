@@ -1,32 +1,11 @@
-:root {
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #f2f2f2;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: black;
+@theme {
+  --font-display: "Roboto Condensed", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
 }
 
 * {
-  font-family: 'Satoshi', sans-serif;
-  font-optical-sizing: auto;
-
-}
-
-body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  min-width: 320px;
-  height: 100vh;
-
-}
-
-#root {
-  width: 100%;
+  box-sizing: border-box;
 }
