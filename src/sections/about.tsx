@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div
+    <main
       className="
         grid
         w-full
@@ -32,9 +32,10 @@ export default function About() {
 
         [&_b]:text-black
       "
+      id="about"
     >
       {/* ABOUT ME */}
-      <div className="col-span-2 mb-0 flex flex-col gap-2 md:col-span-3 md:mb-20">
+      <div className="col-span-2 flex flex-col gap-2 md:col-span-3 ">
         <h3>//ABOUT ME</h3>
 
         <p className="text-justify">
@@ -49,9 +50,8 @@ export default function About() {
           improvement.
         </p>
       </div>
-
-      {/* EXPERIENCE */}
-      <h3 className="col-span-2 mb-0 md:col-span-1 md:mb-20">
+      <span className="mb-5 md:mb-20 col-span-2 md:col-span-3"></span>
+      <h3 className="col-span-2 md:col-span-1">
         //Experience
       </h3>
 
@@ -67,7 +67,7 @@ export default function About() {
         INTERN
       </p>
 
-      {/* TECH STACK */}
+      <span className="mb-5 md:mb-20 col-span-2 md:col-span-3"></span>
       <h3 className="col-span-2 md:col-span-1">
         //TECH STACK
       </h3>
@@ -139,7 +139,7 @@ export default function About() {
       {/* Empty grid cell on desktop */}
       <div className="hidden md:block"></div>
 
-      <p>
+      <p >
         <b>{"<Orm/>"}</b>
         <br />
         Entity Framework Core
@@ -149,14 +149,14 @@ export default function About() {
         Eloquent
       </p>
 
-      <p className="mb-0 md:mb-20">
+      <p >
         <b>{"<Mobile/>"}</b>
         <br />
         Flutter
         <br />
         Jetpack Compose
       </p>
-
+      <span className="mb-5 md:mb-20 col-span-2 md:col-span-3"></span>
       <h3 className="col-span-2 md:col-span-1">
         //TOOLS
       </h3>
@@ -184,6 +184,6 @@ export default function About() {
         <br />
         Neovim
       </p>
-    </div>
+    </main>
   );
 }
