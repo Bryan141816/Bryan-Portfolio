@@ -10,7 +10,6 @@ export default function Home() {
         className="absolute inset-0 h-full w-full object-cover brightness-70"
       />
 
-      {/* Text */}
       <div
         className="
           relative z-10
@@ -95,7 +94,6 @@ export default function Home() {
     bg-transparent
   "
       >
-        {/* Growing circle */}
         <span
           className="
       absolute
