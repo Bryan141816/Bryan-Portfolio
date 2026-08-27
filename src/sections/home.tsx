@@ -64,7 +64,7 @@ export default function Home() {
 
             <div className="flex flex-col">
               <span className="text-lg xl:text-xl">
-                //CONT@CT M3
+                //CONTACT ME
               </span>
 
               <span className="ml-8 text-lg xl:text-xl">

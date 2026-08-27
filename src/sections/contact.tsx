@@ -30,7 +30,7 @@ export default function Contact() {
           text-center
         "
       >
-        CONT@CT
+        //CONTACT
       </span>
 
       {/* MOBILE TITLE */}
@@ -42,7 +42,7 @@ export default function Contact() {
           block md:hidden
         "
       >
-        M3
+        //ME
       </span>
 
       <div
@@ -134,16 +134,16 @@ export default function Contact() {
     self-center
   "
       >
-        <span className="font-normal">
+        {/* <span className="font-normal">
           [Statement]
         </span>
 
-        {"  "}
-
+        {"  "} */}
+        /*
         I'm always open to new opportunities, interesting projects, job offers,
         and collaborations. Whether you're looking to work together on a project,
         have an opportunity you'd like to discuss, or simply want to connect,
-        feel free to reach out through any of the platforms below.
+        feel free to reach out through any of the platforms below. */
       </p>
 
       {/* BOTTOM RIGHT */}
@@ -156,7 +156,7 @@ export default function Contact() {
           xl:text-9xl
         "
       >
-        M3
+        //ME
       </span>
     </div>
   );
