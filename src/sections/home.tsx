@@ -64,16 +64,13 @@ export default function Home() {
 
             <div className="flex flex-col">
               <span className="text-lg xl:text-xl">
-                //CONTACT ME @
+                //CONT@CT M3
               </span>
 
               <span className="ml-8 text-lg xl:text-xl">
                 bryanantier7@gmail.com
               </span>
 
-              <span className="ml-8 text-lg xl:text-xl">
-                (+63) 929 322 4888
-              </span>
             </div>
           </div>
         </div>
@@ -86,7 +83,7 @@ export default function Home() {
         }
         className="
     group
-    absolute bottom-5 right-5 z-100
+    absolute bottom-5 right-5 z-10
     flex h-16 w-16
     items-center justify-center
     overflow-hidden
@@ -110,7 +107,7 @@ export default function Home() {
         {/* Icon */}
         <ArrowDown
           className="
-      relative z-10
+      relative z-5
       size-10
       text-white
       transition-colors duration-300

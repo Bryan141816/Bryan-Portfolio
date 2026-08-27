@@ -13,8 +13,8 @@ export default function About() {
         p-5
         sm:p-7
         md:p-10
-        lg:p-15
-        xl:p-20
+        lg:p-20
+        xl:p-30
         [&_h3]:font-mono
         [&_h3]:text-base
         [&_h3]:font-bold
@@ -26,7 +26,7 @@ export default function About() {
      
         [&_p]:uppercase
         [&_p]:tracking-tighter
-        [&_p]:text-gray-400
+        [&_p]:text-gray-500
         md:[&_p]:text-sm
         lg:[&_p]:text-xl
 
