@@ -85,6 +85,16 @@ export default function Nav() {
     };
   }, []);
 
+  useEffect(() => {
+    if (activeSection) {
+      window.history.replaceState(
+        null,
+        "",
+        `#${activeSection}`
+      );
+    }
+  }, [activeSection]);
+
   const shouldShowNav =
     visible ||
     hovered ||
