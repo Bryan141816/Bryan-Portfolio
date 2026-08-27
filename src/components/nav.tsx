@@ -354,7 +354,7 @@ export default function Nav() {
             flex-col
             font-display
             font-bold
-            uppercase
+            
           "
         >
           <MobileNavLink

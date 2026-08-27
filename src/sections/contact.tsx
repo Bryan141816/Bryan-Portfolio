@@ -54,7 +54,7 @@ export default function Contact() {
           sm:text-xl
           font-bold
           font-mono
-          uppercase
+          
 
           [&_label]:text-sm
           [&_label]:font-semibold
@@ -121,7 +121,7 @@ export default function Contact() {
       {/* BOTTOM LEFT */}
       <p
         className="
-    uppercase
+    
     text-justify
     text-sm
     sm:text-base

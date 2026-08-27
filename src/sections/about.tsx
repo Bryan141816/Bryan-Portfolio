@@ -24,7 +24,7 @@ export default function About() {
         [&_p]:font-mono
         [&_p]:text-sm
      
-        [&_p]:uppercase
+        [&_p]:
         [&_p]:tracking-tighter
         [&_p]:text-gray-500
         md:[&_p]:text-sm
