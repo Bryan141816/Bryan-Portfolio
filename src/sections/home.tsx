@@ -7,7 +7,7 @@ export default function Home() {
       <img
         src={bg}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover brightness-70"
+        className="absolute inset-0 h-full w-full object-cover brightness-30"
       />
 
       <div
