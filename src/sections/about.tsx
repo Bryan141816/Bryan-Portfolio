@@ -32,7 +32,6 @@ export default function About() {
 
         [&_b]:text-black
       "
-      id="about"
     >
       {/* ABOUT ME */}
       <div className="col-span-2 flex flex-col gap-2 md:col-span-3 ">

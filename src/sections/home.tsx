@@ -3,7 +3,7 @@ import bg from '../assets/bg.webp';
 
 export default function Home() {
   return (
-    <main className="relative h-dvh w-full overflow-hidden" id='home'>
+    <main className="relative h-dvh w-full overflow-hidden">
       <img
         src={bg}
         alt=""
