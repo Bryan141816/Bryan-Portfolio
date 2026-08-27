@@ -1,9 +1,30 @@
 import { useEffect, useState } from "react";
 import logo from "/logo.svg";
+
 export default function Nav() {
   const [visible, setVisible] = useState(true);
   const [hovered, setHovered] = useState(false);
+  const [revealed, setRevealed] = useState(false);
+  const [canHover, setCanHover] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
+  // Detect devices that support hover
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(hover: hover)");
+
+    const updateHoverSupport = () => {
+      setCanHover(mediaQuery.matches);
+    };
+
+    updateHoverSupport();
+    mediaQuery.addEventListener("change", updateHoverSupport);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateHoverSupport);
+    };
+  }, []);
+
+  // Handle navbar visibility on scroll
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
@@ -11,23 +32,25 @@ export default function Nav() {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Scrolling down
         setVisible(false);
+        setRevealed(false);
       } else {
+        // Scrolling up
         setVisible(true);
       }
 
       lastScrollY = currentScrollY;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  const [activeSection, setActiveSection] = useState("home");
-
+  // Detect active section
   useEffect(() => {
     const sections = document.querySelectorAll("section");
 
@@ -49,32 +72,53 @@ export default function Nav() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    console.log(activeSection);
-  }, [activeSection]);
+  // Show if:
+  // 1. Normal scroll visibility is true
+  // 2. Desktop hover is active
+  // 3. User tapped the top area
+  const shouldShowNav = visible || hovered || revealed;
 
   return (
     <>
-      {/* Logo - far left */}
-
-      {/* Invisible hover zone at the top */}
+      {/* Top reveal area */}
       <div
         className="fixed top-0 left-0 z-40 h-20 w-full"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        onMouseEnter={() => {
+          if (canHover) {
+            setHovered(true);
+          }
+        }}
+        onMouseLeave={() => {
+          if (canHover) {
+            setHovered(false);
+          }
+        }}
+        onClick={() => {
+          setRevealed(true);
+        }}
       />
+
+      {/* Logo */}
       <a
         href="#home"
         className={`
           fixed top-6 left-6 z-50
           transition-all duration-300 ease-in-out
-          ${visible || hovered
+          ${shouldShowNav
             ? "translate-y-0 opacity-100"
             : "-translate-y-24 opacity-0"
           }
         `}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        onMouseEnter={() => {
+          if (canHover) {
+            setHovered(true);
+          }
+        }}
+        onMouseLeave={() => {
+          if (canHover) {
+            setHovered(false);
+          }
+        }}
       >
         <img
           src={logo}
@@ -90,29 +134,37 @@ export default function Nav() {
       {/* Navigation */}
       <nav
         className={`
-        fixed top-6 left-0 right-0 z-50 mx-auto w-fit
-        transition-all duration-300 ease-in-out
-        ${visible || hovered
+          fixed top-6 left-0 right-0 z-50 mx-auto w-fit
+          transition-all duration-300 ease-in-out
+          ${shouldShowNav
             ? "translate-y-0 opacity-100"
             : "-translate-y-24 opacity-0"
           }
-      `}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        `}
+        onMouseEnter={() => {
+          if (canHover) {
+            setHovered(true);
+          }
+        }}
+        onMouseLeave={() => {
+          if (canHover) {
+            setHovered(false);
+          }
+        }}
       >
         <div
           className={`
-          flex
-          border-5
-          p-0
-          m-0
-          transition-colors duration-300 ease-in-out
-          bg-transparent
-          ${activeSection === "home"
+            flex
+            border-5
+            p-0
+            m-0
+            transition-colors duration-300 ease-in-out
+            bg-transparent
+            ${activeSection === "home"
               ? "border-white"
               : "border-black bg-white"
             }
-        `}
+          `}
         >
           <NavLink
             nav_key="home"
@@ -130,6 +182,7 @@ export default function Nav() {
     </>
   );
 }
+
 interface NavLinkProp {
   nav_key: string;
   text: string;
@@ -153,7 +206,6 @@ function NavLink({ nav_key, text, activeSection }: NavLinkProp) {
         }
       `}
     >
-      {/* Hover circle */}
       {!isCurrent && (
         <span
           className={`
@@ -168,15 +220,17 @@ function NavLink({ nav_key, text, activeSection }: NavLinkProp) {
         />
       )}
 
-      {/* Text */}
       <span
         className={`
-          font-medium
           relative z-10
+          font-medium
           ${!isCurrent
             ? `
                 transition-colors duration-300
-                ${isHome ? "group-hover:text-black" : "group-hover:text-white"}
+                ${isHome
+              ? "group-hover:text-black"
+              : "group-hover:text-white"
+            }
               `
             : ""
           }
