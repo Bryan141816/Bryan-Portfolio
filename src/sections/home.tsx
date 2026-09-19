@@ -3,11 +3,13 @@ import bg from '../assets/bg.webp';
 
 export default function Home() {
   return (
-    <main className="relative h-dvh w-full overflow-hidden">
+    <main className="relative h-dvh w-full overflow-hidden bg-black">
       <img
         src={bg}
         alt=""
         className="absolute inset-0 h-full w-full object-cover brightness-30"
+        fetchPriority='high'
+        loading="eager"
       />
 
       <div
